@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react";
-import styles from "../../styles/home.module.css"
 import { ToggleVisibleArea } from "./components/toggleVisibleArea";
 
 /**
