@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 import drugImage from "@/image/24673275.png"
 
 /** 薬の種類 */
-export type drugType = "総合風邪薬" | "解熱鎮痛薬" | "総合胃腸薬" | "整腸剤" | "かゆみ用塗り薬" | "傷用塗り薬" | "湿布薬"
+export type drugType = "総合風邪薬" | "解熱鎮痛薬" | "総合胃腸薬" | "整腸剤" | "かゆみ用塗り薬" | "傷用塗り薬" | "湿布薬" | ""
 
 /**
  * #### 常備薬の仮想値の型
@@ -33,3 +33,10 @@ export const DrugParameter: drugParameterType[] = [
   { id: 6, icon: drugImage, name: '薬品F', type: '解熱鎮痛薬', stockCount: 2, stockAmount: '30mg' },
   { id: 7, icon: drugImage, name: '薬品G', type: 'かゆみ用塗り薬', stockCount: 0, stockAmount: '0ml' },
 ];
+
+/**
+ * #### stockCountが0の要素を格納する
+ */
+export const getOutOfStockDrugs = (drugs: drugParameterType[]): drugParameterType[] => {
+  return drugs.filter(drug => drug.stockCount === 0);
+};

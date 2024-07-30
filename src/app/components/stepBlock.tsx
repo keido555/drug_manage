@@ -1,3 +1,10 @@
+/**
+ * #### 順序や使用方法を説明する
+ * - トップページ下部の画面
+ * - 製作途中
+ * 
+ * @returns 
+ */
 export const StepBlock = () => {
   return (
     <div className="p-8">

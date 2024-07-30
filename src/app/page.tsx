@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+
 import { Block } from "./components/block";
 import { StepBlock } from "./components/stepBlock";
 
@@ -30,7 +31,7 @@ export default function Home() {
             <Block title={"常備薬管理アプリ"} text="家で保管している常備薬の管理を行います" url="/ManageMedicine" disabled={false} />
             <Block title={"最低限備えておきたい常備薬について"} text="万が一に備えて置いておきたい常備薬の一覧を掲載します" url="/RequiredMedic" disabled={false} />
             <Block title={"シーン別で追加で備えておきたい常備薬について"} text="4つのシーン別に追加であると便利な薬を紹介します" url="/MedicPrecation" disabled={false} />
-            <Block title={"管理するうえでの注意点"} text="常備薬を使用・管理する上での注意点を紹介します" url="/DrugsByScene" disabled={false} />
+            <Block title={"管理するうえでの注意点"} text="常備薬を使用・管理する上での注意点を紹介します" url="/MedicByScene" disabled={false} />
           </div>
         </div>
         <StepBlock />

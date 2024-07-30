@@ -3,6 +3,11 @@
 import { useState } from "react";
 import { ToggleVisibleArea } from "./components/toggleVisibleArea"
 
+/**
+ * #### シーンごとの常備薬について
+ * 
+ * @returns 
+ */
 const MedicPrecation = () => {
   const [visibleIndex, setVisibleIndex] = useState<number | null>(null);
 

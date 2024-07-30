@@ -1,6 +1,11 @@
 "use client"
 
-const DrugsByScene = () => {
+/**
+ * #### 管理するうえでの注意点
+ * 
+ * @returns 
+ */
+const MedicByScene = () => {
   return (
     <main className="max-w-7xl w-full mx-auto p-24 bg-white">
       <div className="my-auto border rounded-lg shadow-md p-12">
@@ -13,4 +18,4 @@ const DrugsByScene = () => {
   )
 }
 
-export default DrugsByScene
+export default MedicByScene

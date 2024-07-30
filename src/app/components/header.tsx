@@ -1,16 +1,24 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { usePathname } from "next/navigation"
 import { ToggleButton } from "./toggleButton"
 import { Navigation } from "./navigation"
+import { useAuth } from "./systemContext"
+import { DrugParameter, getOutOfStockDrugs } from "../(page)/ManageMedicine/components/drugParameter"
 
 export const Header = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { outOfStockDrugs, setOutOfStockDrugs } = useAuth()
 
+  useEffect(() => {
+    setOutOfStockDrugs(getOutOfStockDrugs(DrugParameter))
+  }, [DrugParameter])
+
+  /** メニューボタン押下時に開閉する */
   const toggleFunction = () => {
     setIsOpen(() => !isOpen);
   };

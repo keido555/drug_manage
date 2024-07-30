@@ -7,6 +7,11 @@ type ToggleButtonProps = {
   label: string,
 }
 
+/**
+ * #### メニューの開閉を制御するボタン
+ * @param props 
+ * @returns 
+ */
 export const ToggleButton = (props: ToggleButtonProps) => {
   const { isOpen, onClick, controls, label } = props
 

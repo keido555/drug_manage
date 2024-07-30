@@ -1,18 +1,29 @@
 "use client"
 
 import Image from "next/image"
-
-import { useAuth } from "@/app/components/systemContext"
 import { DrugParameter } from "./components/drugParameter"
+import { useRouter } from "next/navigation"
 
+/**
+ * #### 常備薬の在庫量を表で表示する
+ * @returns 
+ */
 const ManageMedicine = () => {
-  const { } = useAuth()
+  const router = useRouter()
 
   return (
     <main className="max-w-7xl w-full mx-auto p-24 bg-sky-100">
       <div className="my-auto border rounded-lg shadow-md p-12 bg-white">
         <p className="text-2xl text-center font-bold">常備薬管理アプリ</p>
-        <div className="py-8">
+        <div className="text-end pt-8">
+          <button
+            onClick={() => router.push("/MedicRegistration")}
+            className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-700"
+          >
+            薬の追加
+          </button>
+        </div>
+        <div className="pt-2 pb-8">
           <table className="min-w-full bg-white border border-gray-300">
             <thead className="bg-sky-200">
               <tr>

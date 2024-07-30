@@ -6,10 +6,15 @@ import { useState } from "react";
 import DrugImage from "@/image/drug_image.jpg"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 
+/**
+ * #### 新規登録画面
+ * @returns 
+ */
 const NewRegistration = () => {
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("");
 
+  /** 新規登録 */
   const handleSignUp = () => {
     console.log("新規作成");
     const auth = getAuth();

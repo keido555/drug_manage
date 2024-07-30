@@ -7,12 +7,17 @@ import DrugImage from "@/image/drug_image.jpg"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import { useRouter } from "next/navigation";
 
+/**
+ * #### ログインページ
+ * @returns 
+ */
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const router = useRouter()
 
+  /** ログイン関数 */
   const handleLogin = async () => {
     const auth = getAuth();
     console.log("ログイン", { email, password, auth });
@@ -26,6 +31,7 @@ const Login = () => {
       })
   };
 
+  /** サインアップ関数 */
   const handleSignUp = () => {
     console.log("新規作成");
     router.push("/NewRegistration")
@@ -33,6 +39,7 @@ const Login = () => {
     setPassword("")
   };
 
+  /** パスワードの再作成 */
   const handleForgotPassword = () => {
     console.log("今回省略");
     setEmail("")

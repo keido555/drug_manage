@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 
 type BlockProps = {
@@ -8,13 +7,17 @@ type BlockProps = {
   disabled: boolean
 }
 
+/**
+ * #### 小項目をBlock形式で表示
+ * - トップ画面にて使用
+ * - 引数で表示を制御
+ * 
+ * @param props 
+ * @returns 
+ */
 export const Block = (props: BlockProps) => {
   const { title, text, url, disabled } = props
   const router = useRouter()
-
-  const handleClick = () => {
-    router.push(url)
-  }
 
   return (
     <div className="p-4 lg:w-1/2 md:w-full">
@@ -27,7 +30,7 @@ export const Block = (props: BlockProps) => {
         <div className="flex-grow">
           <h2 className="text-gray-900 text-lg title-font font-medium mb-3">{title}</h2>
           <p className="leading-relaxed text-base">{text}</p>
-          <button onClick={() => handleClick()} disabled={disabled} className={!disabled ? "flex text-sky-500" : "flex text-slate-500"}>
+          <button onClick={() => router.push(url)} disabled={disabled} className={!disabled ? "flex text-sky-500" : "flex text-slate-500"}>
             さらに見る
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2 my-auto" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
